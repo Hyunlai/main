@@ -36,7 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'files',
+    'accounts',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -115,12 +118,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = os.path.join(BASE_DIR / 'static', 'static-root')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR / 'static', 'media_root')
 
+MEDIA_ROOT = os.path.join(BASE_DIR / 'static', 'media_root')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
